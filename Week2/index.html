@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <title>Burger na masarap!</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Burger mo to Form</h1>
+        <form action="index.php" method="post">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" required>
+
+            <label for="burger">Menu :</label>
+            <select name="burger" id="burger">
+                <option value="quarter-pound">Quarter Pound - 60</option>
+                <option value="cheese-burger">Cheese Burger - 25</option>
+            </select>
+            <select name="drinks" id="drinks">Drinks :
+                <option value="coke">Coke - 25</option>
+                <option value="rc-cola">RC - 12</option>
+            </select>
+            <br>
+            <label for="drink-size">Drinks size :</label>
+            <input type="radio" name="size" id="small" value="small" required>
+            <label for="size">Small</label>
+            <input type="radio" name="size" id="medium" value="medium" required>
+            <label for="size">Medium</label>
+            <input type="radio" name="size" id="large" value="large" required>
+            <label for="size">Large</label>
+            <br><br>
+            <label for="extras">Extras :</label>
+            <input type="checkbox" name="extras[]" id="cheese-sauce" value="cheese-sauce">
+            <label for="cheese-sauce">Cheese sauce - 5</label>
+            <input type="checkbox" name="extras[]" id="Lettuce" value="Lettuce">
+            <label for="Lettuce">Lettuce - 5</label>
+            <br>
+            <br>
+            <label for="instructions">Instructions :</label>
+            <textarea name="instructions" id="instructions" rows="2"></textarea>
+            <br>
+            <br>
+            <button type="submit">Place order</button>
+        </form>
+    </div>
+</body>
+</html>
