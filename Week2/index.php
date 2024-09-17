@@ -38,18 +38,22 @@
         foreach($extras as $extra) {
             $total_price = $total_price + $extras_prices[$extra];
         }
+        echo $burger_type;
+        echo "<br>";
+        echo  $drink_type . " " . $size;
+        echo "<br>";
+        echo " Total price :" . " " . $total_price;
+        echo "<br>";
 
-        echo $total_price;
+        $instructions = $_POST["instructions"];
+        echo "Order instructions :" . " " . $instructions;
         echo "<br>";
 
         if ($burger_type !== "quarter-pound"){
-            echo "Hey" . " " . htmlspecialchars($_POST["name"]) . "!";
+            echo "Order name :" . " " . htmlspecialchars($_POST["name"]) . "!";
             echo "<p>D kana sisikatan ng araw!</p>";
         } elseif ($total_price >= 50){
             echo "<p>Password for wi-fi: wala kami nun!</p>";
         }
-
-        $instructions = $_POST["instructions"];
-        echo $instructions;
     }
 ?>
