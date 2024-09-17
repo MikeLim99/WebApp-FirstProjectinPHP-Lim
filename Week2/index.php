@@ -48,5 +48,8 @@
         } elseif ($total_price >= 50){
             echo "<p>Password for wi-fi: wala kami nun!</p>";
         }
+
+        $instructions = $_POST["instructions"];
+        echo $instructions;
     }
 ?>
