@@ -1,0 +1,138 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'); */
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins';
+}
+
+nav {
+    height: 70px;
+    width: 100%;
+    background-color: rgb(236, 95, 0);
+    position: absolute;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    height: 60px;
+}
+
+nav li:first-child{
+    position: absolute;
+    right: 85%;
+}
+
+nav li {
+    padding: 0 100px;
+}
+
+nav li a{
+    text-decoration: none;
+    color: white;
+}
+
+nav li a:hover{
+    color: black;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container .orderform {
+    height: fit-content;
+    width: 400px;
+    border: 1px solid white;
+    padding: 15px;
+    background-color: rgba(255, 72, 0, 0.411);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    color: white;
+}
+.content {
+    background-image: url('images/Burgerimg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+.orderfields {
+    font-family: 'Poppins';
+}
+
+.orderfields h1 {
+    display: flex;
+    justify-content: center;
+    color: white;
+    padding-bottom: 20px;
+}
+
+.informationfield {
+    display: flex;
+    justify-content: start;
+}
+
+.orderlist {
+    display: flex;
+    justify-content: start;
+    padding: 10px 0;
+}
+
+.orderlist select {
+    margin-right: 20px;
+}
+
+.sideorder {
+    padding: 20px 0;
+}
+
+.orderinstructions label {
+    display: flex;
+    justify-content: center;
+}
+
+#instructions {
+    width: 100%;
+}
+
+
+.submit-btn {
+    display: flex;
+    justify-content: center;
+}
+
+.submit-btn button {
+    height: 40px;
+    width: 100px;
+    background-color: rgb(236, 95, 0);
+    border: .05px solid rgba(0, 0, 0, 0.493);
+    border-radius: 10px;
+    font-family: 'Poppins';
+    font-weight: 700;
+    color: white;
+    transition: 0.2s;
+}
+
+.submit-btn button:hover {
+    transform: scale(1.05);
+    background-color: rgb(0, 182, 0);
+}
+
+label {
+    padding-right: 10px;
+}
+
+footer {
+    height: 150px;
+    width: 100%;
+    background-color: rgba(249, 141, 0, 0.851);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,9 @@
+Order Summary
+----------------
+Name : Michael Angelo Lim
+Order : quarter-pound
+Drinks : coke
+Drinks size : large
+Total Price : 115
+Instructions : tara dali
+Thank you for Ordering!
