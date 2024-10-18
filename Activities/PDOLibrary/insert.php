@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
 <?php 
 if($_SERVER["REQUEST_METHOD"] === "POST"){
     $action = $_POST['action'];
@@ -6,8 +15,14 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
         case 'addbook':
             addbook();
             break;
+        case 'updateBook':
+            updateBook();
+            break;
         case 'deletebook':
             deletebook();
+            break;
+        case 'searchBook':
+            searchBook();
             break;
     }
 }
@@ -39,8 +54,6 @@ function addbook(){
         'genre' => $genre
     ];
     $statement -> execute($data);
-    echo "Successfully added a book" . "<br/>" . $title . "<br/>" . $author . "<br/>" . $published . "<br/>" . $genre . "<br/>";
-    echo "<button><a href='index.html'>Back</a></button>";
 }
 
 function deletebook(){
@@ -58,7 +71,38 @@ function deletebook(){
     $sql = "DELETE FROM books WHERE id=:id";
     $statement=$conn->prepare($sql);
     $statement->execute(['id'=>$id]);
-    echo "You've succcessfully deleted a book from the list" . "<br/>";
-    echo "<button><a href='index.html'>Back</a></button>";
+}
+
+function updateBook(){
+    $host = "localhost";
+    $user = "root";
+    $password = "";
+    $dbname = "locallibrary";
+
+    $data_source_name="mysql:host=$host; dbname=$dbname";
+    $conn = new PDO($data_source_name, $user, $password);
+    $conn -> setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
+
+    $statement = $conn->query("SELECT * FROM books");
+    $id = $_POST['id'];
+    $title = $_POST['title'];
+    $author = $_POST['author'];
+    $published_year = $_POST['published'];
+    $genre = $_POST['genre'];
+
+    $sql = "UPDATE books SET title=:title, author=:author, published_year=:published_year, genre=:genre WHERE id=:id";
+    $statement=$conn->prepare($sql);
+    $data = [
+        'id' => $id,
+        'title' => $title,
+        'author' => $author,
+        'published_year' => $published_year,
+        'genre' => $genre
+    ];
+    $statement->execute($data);
 }
 ?>
+
+</body>
+</html>
+
