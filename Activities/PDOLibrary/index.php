@@ -7,6 +7,14 @@
     <title>Daily dose of Books</title>
 </head>
 <body>
+    <nav>
+        <ul>
+            <li><a href="index.php">Home</a></li>
+            <li><a href="" onclick="forfun()">About</a></li>
+            <li><a href="" onclick="forfun()">How to</a></li>
+            <li><a href="" onclick="forfun()">Login</a></li>
+        </ul>
+    </nav>
     <div class="formSheet"> 
         <form action="#" method="post">
             <h1>Local Library of your daily lives</h1>
@@ -27,13 +35,28 @@
             <input type="text" name="id" id="id">
             <div class="btn">
                 <button type="submit" name="action" value="searchBook">Search book</button>
-                <button type="submit" name="action" value="deletebook">Delete book</button>
+                <button onclick="alertbtn()" type="submit" name="action" value ="" id="delbtn">Delete book</button>
             </div>
             <br>
             <?php 
             include "insert.php";
             ?>
         </form>
+    <script>
+        function alertbtn(){
+            let msg = "Press 'OK' to confirm the deletion, Cancel If you changed your mind";
+            if (confirm(msg)== true){
+                document.getElementById("delbtn").value = "deletebook";
+                alert("Book has been deleted!");
+            }else {
+                alert("Nothing is deleted!");
+            }
+        }
+        function forfun(){
+            alert("This is just design and for fun!");
+            alert("further improvements? I dont know!");
+        }
+    </script>
         
     </div>
     <!-- bug found adding books even without information on the field -->
@@ -60,12 +83,13 @@
     $conn = new PDO($data_source_name, $user, $password);
     $conn -> setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
 
-    
+    //search for book bonus and for fun!!
     if(isset($_POST['id'])){
+        $author = $_POST['author'];
         $title = $_POST['title'];
         $search = $_POST['id'];
-        $statement = $conn->prepare("SELECT * FROM books WHERE id = :id or title = :title");
-        $statement -> execute(['id'=> $search, 'title'=>$title]);
+        $statement = $conn->prepare("SELECT * FROM books WHERE id = :id or title = :title or author = :author");
+        $statement -> execute(['id'=> $search, 'title'=>$title, 'author' => $author]);
         $rows = $statement->fetchAll();
         foreach($rows as $row){
             echo "<tr><td>". $row->id . "</td><td>" . $row->title . "</td><td>" . $row->author . "</td><td>" . $row->published_year . "</td><td>" . $row->genre . "</td></tr>";
@@ -82,5 +106,7 @@
 ?>
     </table>
 </div>
+
+
 </body>
 </html>

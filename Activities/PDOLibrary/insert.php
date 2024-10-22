@@ -21,9 +21,6 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
         case 'deletebook':
             deletebook();
             break;
-        case 'searchBook':
-            searchBook();
-            break;
     }
 }
     
@@ -69,8 +66,8 @@ function deletebook(){
     $statement = $conn->query("SELECT * FROM books");
     $id = $_POST["id"];
     $sql = "DELETE FROM books WHERE id=:id";
-    $statement=$conn->prepare($sql);
-    $statement->execute(['id'=>$id]);
+        $statement=$conn->prepare($sql);
+        $statement->execute(['id'=>$id]);
 }
 
 function updateBook(){

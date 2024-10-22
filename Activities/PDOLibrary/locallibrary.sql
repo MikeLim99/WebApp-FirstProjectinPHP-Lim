@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 18, 2024 at 05:37 PM
+-- Generation Time: Oct 22, 2024 at 07:49 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -44,7 +44,9 @@ INSERT INTO `books` (`id`, `title`, `author`, `published_year`, `genre`) VALUES
 (19, 'Hunter X Hunter', 'Yoshihiro Togashi', '1998', 'Action/Violence'),
 (20, 'My hero Academia', 'Kohei Horikoshi', '2008', 'Action/Fantasy/Comedy'),
 (37, 'The Namesake', 'Jhumpa Lahiri', '2003', 'Fiction'),
-(38, 'The Curious Incident of the Dog in the Night-Time', 'Mark Haddon', '2003', 'Fiction/Mystery');
+(38, 'The Curious Incident of the Dog in the Night-Time', 'Mark Haddon', '2003', 'Fiction/Mystery'),
+(46, 'Pride And Prejudice', 'Jane Austen', '1813', 'Historical fiction/Literature'),
+(53, 'Romeo and Juliet', 'William Shakespeare', '1597', 'Tragedy');
 
 --
 -- Indexes for dumped tables
@@ -64,7 +66,7 @@ ALTER TABLE `books`
 -- AUTO_INCREMENT for table `books`
 --
 ALTER TABLE `books`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
